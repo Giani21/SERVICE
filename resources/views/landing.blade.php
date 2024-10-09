@@ -115,11 +115,11 @@
     <nav class="flex justify-between items-center p-5 bg-gray-800 shadow-lg">
         <div class="text-2xl font-bold">SERVICE?</div>
         <div class="flex space-x-4">
-            <a href="#"
+            <a href="{{ route('register') }}"
                 class="flex items-center bg-green-600 hover:bg-green-500 text-white font-semibold py-2 px-4 rounded">
                 <i class="fas fa-user-plus mr-2"></i> Registrarse
             </a>
-            <a href="#"
+            <a href="{{ route('login') }}"
                 class="flex items-center bg-blue-600 hover:bg-blue-500 text-white font-semibold py-2 px-4 rounded">
                 <i class="fas fa-sign-in-alt mr-2"></i> Iniciar Sesión
             </a>
