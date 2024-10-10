@@ -20,7 +20,8 @@
             top: 50%;
             left: 10px;
             transform: translateY(-50%);
-            color: #9CA3AF; /* Gris claro */
+            color: #9CA3AF;
+            /* Gris claro */
         }
 
         .relative-input {
@@ -73,7 +74,8 @@
     <nav class="flex justify-between items-center p-5 bg-gray-800 shadow-lg">
         <div class="text-2xl font-bold">SERVICE?</div>
         <div>
-            <a href="/" class="flex items-center bg-blue-600 hover:bg-blue-500 text-white font-semibold py-2 px-4 rounded transition duration-300">
+            <a href="/"
+                class="flex items-center bg-blue-600 hover:bg-blue-500 text-white font-semibold py-2 px-4 rounded transition duration-300">
                 <i class="fas fa-home mr-2"></i> Volver al Inicio
             </a>
         </div>
@@ -83,18 +85,16 @@
     <section class="flex justify-center items-center min-h-screen px-5">
         <div class="w-full max-w-2xl bg-gray-800 bg-opacity-80 p-8 rounded-lg shadow-lg form-container">
             <h2 class="text-3xl font-bold text-center mb-6">Iniciar Sesión</h2>
-            <form method="POST" action="{{ route('login') }}" class="space-y-6">
+            <form method="POST" action="{{ route('login.submit') }}" class="space-y-6">
                 @csrf
 
-                <!-- Correo Electrónico -->
+                <!-- Nombre de Usuario -->
                 <div class="relative">
-                    <label for="email" class="block text-left text-sm font-bold mb-1">Correo Electrónico:</label>
-                    <div class="flex items-center">
-                    <i class="fas fa-envelope text-gray-400 mr-3"></i>
-                        <input type="email" id="email" name="email" value="{{ old('email') }}"
-                            class="w-full p-3 bg-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 @error('email') border-2 border-red-500 @enderror" required>
-                    </div>
-                    @error('email')
+                    <label for="email" class="block text-left text-sm font-bold mb-1">Email:</label>
+                    <input type="email" id="email" name="email" value="{{ old('email') }}"
+                        class="w-full p-3 bg-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 @error('email') border-2 border-red-500 @enderror"
+                        required>
+                    @error('name')
                         <span class="text-red-500 text-sm">{{ $message }}</span>
                     @enderror
                 </div>
@@ -102,11 +102,9 @@
                 <!-- Contraseña -->
                 <div class="relative">
                     <label for="password" class="block text-left text-sm font-bold mb-1">Contraseña:</label>
-                    <div class="flex items-center">
-                    <i class="fas fa-lock text-gray-400 mr-3"></i>
-                        <input type="password" id="password" name="password"
-                            class="w-full p-3 bg-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 @error('password') border-2 border-red-500 @enderror" required>
-                    </div>
+                    <input type="password" id="password" name="password"
+                        class="w-full p-3 bg-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 @error('password') border-2 border-red-500 @enderror"
+                        required>
                     @error('password')
                         <span class="text-red-500 text-sm">{{ $message }}</span>
                     @enderror

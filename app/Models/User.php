@@ -2,27 +2,35 @@
 
 namespace App\Models;
 
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable; // Asegúrate de que esto sea correcto
+use Illuminate\Notifications\Notifiable;
 
-class User extends Model
+class User extends Authenticatable implements AuthenticatableContract
 {
-    use HasFactory;
-    protected $table = 'users';
-    public $timestamps = false;
+    use HasFactory, Notifiable;
 
     protected $fillable = [
         'name',
         'email',
         'password',
         'role',
-        'phone',
     ];
 
     protected $hidden = [
         'password',
         'remember_token',
     ];
+
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
+
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = bcrypt($value);
+    }
 
     public function bookings()
     {
@@ -37,11 +45,6 @@ class User extends Model
     public function messages()
     {
         return $this->hasMany(Message::class);
-    }
-
-    public function setPasswordAttribute($value)
-    {
-        $this->attributes['password'] = bcrypt($value);
     }
 
 }
