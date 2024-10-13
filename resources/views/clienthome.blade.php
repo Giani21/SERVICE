@@ -33,23 +33,20 @@
     <nav class="flex flex-wrap justify-between items-center p-5 bg-gray-800 shadow-lg">
         <div class="text-2xl font-bold">SERVICE?</div>
         <div class="hidden md:flex items-center space-x-4">
-            <!-- Barra de búsqueda -->
-            <div class="relative">
-                <input type="text" placeholder="Buscar..."
-                    class="bg-gray-700 text-white py-2 px-4 rounded-lg focus:outline-none focus:ring focus:ring-blue-300" />
-                <button class="absolute right-2 top-2 text-white">
-                    <i class="fas fa-search"></i>
-                </button>
-            </div>
-            <a href="#"
+            <!-- Botón de búsqueda -->
+            <a href="{{ route('clientsearch') }}"
+                class="bg-blue-600 hover:bg-blue-500 text-white font-semibold py-2 px-4 rounded transition duration-300">
+                <i class="fas fa-search mr-2"></i> Buscar
+            </a>
+            <a href="{{ route('clientchat') }}"
                 class="bg-green-600 hover:bg-green-500 text-white font-semibold py-2 px-4 rounded transition duration-300">
                 <i class="fas fa-comments mr-2"></i> Chat
             </a>
-            <a href="#"
+            <a href="{{ route('clientbudget') }}"
                 class="bg-yellow-600 hover:bg-yellow-500 text-white font-semibold py-2 px-4 rounded transition duration-300">
                 <i class="fas fa-file-invoice-dollar mr-2"></i> Crear Presupuesto
             </a>
-            <a href="#"
+            <a href="{{ route('clientviewcompanies') }}"
                 class="bg-purple-600 hover:bg-purple-500 text-white font-semibold py-2 px-4 rounded transition duration-300">
                 <i class="fas fa-building mr-2"></i> Ver Empresas
             </a>
@@ -71,19 +68,20 @@
         </div>
     </nav>
 
+
     <!-- Menú hamburguesa -->
     <div id="menu" class="hidden bg-gray-800 p-5 md:hidden">
-        <a href="#"
+        <a href="{{ route('clientsearch') }}"
             class="block text-white font-semibold py-2 px-4 rounded hover:bg-green-600 transition duration-300">Buscar</a>
         <hr class="border-gray-600 my-2">
-        <a href="#"
+        <a href="{{ route('clientchat') }}"
             class="block text-white font-semibold py-2 px-4 rounded hover:bg-green-500 transition duration-300">Chat</a>
         <hr class="border-gray-600 my-2">
-        <a href="#"
+        <a href="{{ route('clientbudget') }}"
             class="block text-white font-semibold py-2 px-4 rounded hover:bg-yellow-500 transition duration-300">Crear
             Presupuesto</a>
         <hr class="border-gray-600 my-2">
-        <a href="#"
+        <a href="{{ route('clientviewcompanies') }}"
             class="block text-white font-semibold py-2 px-4 rounded hover:bg-purple-500 transition duration-300">Ver
             Empresas</a>
         <hr class="border-gray-600 my-2">
