@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\ClientProfileController;
 
 Route::get('/', function () {
     return view('landing');
@@ -12,9 +13,13 @@ Route::get('/register', function () {
     return view('register');
 })->name('register');
 
-Route::get('/clientehome', function () {
-    return view('clientehome');
-})->name('clientehome');
+Route::get('/clienthome', function () {
+    return view('clienthome');
+})->name('clienthome');
+
+Route::get('/clientprofile', function () {
+    return view('clientprofile');
+})->name('clientprofile');
 
 Route::get('/login', function () {
     return view('login');
@@ -41,23 +46,7 @@ Route::post('/login', [LoginController::class, 'login'])->name('login.submit');
 
 Route::post('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
 
+Route::get('/clientprofile', [ClientProfileController::class, 'show'])->name('clientprofile.show')->middleware('auth');
 
-Route::get('/clientehome', function () {
-    return view('clientehome');
-})->name('clientehome');
-
-Route::get('/cliente/compare', function () {
-    // lógica para comparar servicios
-})->name('client.compare');
-
-Route::get('/cliente/reservas', function () {
-    // lógica para mostrar reservas
-})->name('client.reservas');
-
-Route::get('/cliente/reviews', function () {
-    // lógica para mostrar reseñas
-})->name('client.reviews');
-
-Route::get('/cliente/profile', function () {
-    // lógica para mostrar perfil
-})->name('client.profile');
+// Actualizar el perfil del cliente
+Route::put('/clientprofile', [ClientProfileController::class, 'update'])->name('clientprofile.update')->middleware('auth');

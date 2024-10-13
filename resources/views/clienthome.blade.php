@@ -53,7 +53,7 @@
                 class="bg-purple-600 hover:bg-purple-500 text-white font-semibold py-2 px-4 rounded transition duration-300">
                 <i class="fas fa-building mr-2"></i> Ver Empresas
             </a>
-            <a href="#"
+            <a href="{{ route('clientprofile.show') }}"
                 class="bg-gray-600 hover:bg-black-500 text-white font-semibold py-2 px-4 rounded transition duration-300">
                 <i class="fas fa-user mr-2"></i> Perfil
             </a>
@@ -87,7 +87,7 @@
             class="block text-white font-semibold py-2 px-4 rounded hover:bg-purple-500 transition duration-300">Ver
             Empresas</a>
         <hr class="border-gray-600 my-2">
-        <a href="#"
+        <a href="{{ route('clientprofile.show') }}"
             class="block text-white font-semibold py-2 px-4 rounded hover:bg-red-500 transition duration-300">Perfil</a>
         <hr class="border-gray-600 my-2">
         <a href="#"
@@ -220,21 +220,6 @@
             document.body.classList.add('loaded'); // Agrega la clase para hacer visible el body
         };
 
-        // Fade out body
-        window.onbeforeunload = function () {
-            document.body.classList.remove('loaded'); // Quita la clase para ocultar el body
-        };
-
-        // Cerrar sesión
-        document.getElementById('logout').addEventListener('click', function () {
-            fetch('/logout', {
-                method: 'POST',
-                headers: {
-                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-                }
-            }).then(response => response.json())
-                .then(data => { window.location.href = data.redirect; });
-        });
     </script>
 </body>
 

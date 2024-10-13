@@ -37,7 +37,7 @@ class LoginController extends Controller
 
             // Redirigir según el rol
             if ($user->role === 'client') {
-                return redirect()->route('clientehome');
+                return redirect()->route('clienthome');
             } elseif ($user->role === 'employee') {
                 return redirect()->route('employeehome');
             } elseif ($user->role === 'company') {
