@@ -31,7 +31,7 @@
 
     <!-- Navbar -->
     <nav class="flex flex-wrap justify-between items-center p-5 bg-gray-800 shadow-lg">
-        <div class="text-2xl font-bold">SERVICE?</div>
+        <div class="text-2xl font-bold"><a href="{{ route('clienthome') }}">SERVICE?</a></div>
         <div class="hidden md:flex items-center space-x-4">
             <!-- Botón de búsqueda -->
             <a href="{{ route('clientsearch') }}"
@@ -41,10 +41,6 @@
             <a href="{{ route('clientchat') }}"
                 class="bg-green-600 hover:bg-green-500 text-white font-semibold py-2 px-4 rounded transition duration-300">
                 <i class="fas fa-comments mr-2"></i> Chat
-            </a>
-            <a href="{{ route('clientbudget') }}"
-                class="bg-yellow-600 hover:bg-yellow-500 text-white font-semibold py-2 px-4 rounded transition duration-300">
-                <i class="fas fa-file-invoice-dollar mr-2"></i> Crear Presupuesto
             </a>
             <a href="{{ route('clientviewcompanies') }}"
                 class="bg-purple-600 hover:bg-purple-500 text-white font-semibold py-2 px-4 rounded transition duration-300">
@@ -77,10 +73,6 @@
         <a href="{{ route('clientchat') }}"
             class="block text-white font-semibold py-2 px-4 rounded hover:bg-green-500 transition duration-300">Chat</a>
         <hr class="border-gray-600 my-2">
-        <a href="{{ route('clientbudget') }}"
-            class="block text-white font-semibold py-2 px-4 rounded hover:bg-yellow-500 transition duration-300">Crear
-            Presupuesto</a>
-        <hr class="border-gray-600 my-2">
         <a href="{{ route('clientviewcompanies') }}"
             class="block text-white font-semibold py-2 px-4 rounded hover:bg-purple-500 transition duration-300">Ver
             Empresas</a>
@@ -88,7 +80,7 @@
         <a href="{{ route('clientprofile.show') }}"
             class="block text-white font-semibold py-2 px-4 rounded hover:bg-red-500 transition duration-300">Perfil</a>
         <hr class="border-gray-600 my-2">
-        <a href="#"
+        <a href="/"
             class="block text-white font-semibold py-2 px-4 rounded hover:bg-gray-500 transition duration-300">Cerrar
             Sesión</a>
     </div>

@@ -25,10 +25,6 @@ Route::get('/clientsearch', function () {
     return view('clientsearch');
 })->name('clientsearch');
 
-Route::get('/clientbudget', function () {
-    return view('clientbudget');
-})->name('clientbudget');
-
 Route::get('/clientchat', function () {
     return view('clientchat');
 })->name('clientchat');
